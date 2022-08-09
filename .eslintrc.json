@@ -15,5 +15,13 @@
         "jsx": true
       }
     }
+  },
+  "rules": {
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extension": [".ts", "tsx"]
+      }
+    ]
   }
 }
