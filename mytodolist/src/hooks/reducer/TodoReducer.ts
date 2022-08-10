@@ -6,9 +6,7 @@ export const todoReducer = (
 ): TodoType[] => {
   switch (action.type) {
     case 'CREATE':
-      state.push(action.todo);
-      console.log(state);
-      return state;
+      return state.concat(action.todo);
     default:
       throw new Error(`Unhandled action type: ${action.type}`);
   }
