@@ -1,9 +1,9 @@
 {
   "extends": [
     "next/core-web-vitals",
-    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
     "airbnb",
-    "prettier"
+    "plugin:prettier/recommended"
   ],
   "plugins": ["prettier"],
   "parser": "@typescript-eslint/parser",
@@ -22,6 +22,7 @@
       {
         "extension": [".ts", "tsx"]
       }
-    ]
+    ],
+    "react/jsx-max-props-per-line": [1, { "maximum": 10 }]
   }
 }
