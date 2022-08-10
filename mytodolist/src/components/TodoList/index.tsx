@@ -1,12 +1,12 @@
 import React, { useContext } from 'react';
 
 import Todo from 'src/components/Todo';
-import { TodoStateContext } from 'src/hooks/context/TodoContext';
+import { useTodoState } from 'src/hooks/context/TodoContext';
 
 import styles from './index.module.scss';
 
 const TodoList = (): React.ReactElement => {
-  const todoState = useContext(TodoStateContext);
+  const todoState = useTodoState();
   console.log(todoState);
   return (
     <div className={styles.wrapper}>

@@ -1,14 +1,13 @@
-import { ReactElement, useState, useContext } from 'react';
+import React, { ReactElement, useState } from 'react';
 
-import { TodoDispatchContext } from 'src/hooks/context/TodoContext';
-import { TodoStateContext } from 'src/hooks/context/TodoContext';
+import { useTodoDispatch, useTodoState } from 'src/hooks/context/TodoContext';
 
 const TodoInput = (): ReactElement => {
   console.log('TodoInput');
   const [name, setName] = useState('');
   const [description, setDescription] = useState('');
-  const todoDispatch = useContext(TodoDispatchContext);
-  const todoState = useContext(TodoStateContext);
+  const todoDispatch = useTodoDispatch();
+  const todoState = useTodoState();
 
   const handleNameChange = (e: React.FormEvent<HTMLInputElement>) => {
     setName(e.currentTarget.value);
@@ -22,6 +21,8 @@ const TodoInput = (): ReactElement => {
       type: 'CREATE',
       todo: { id: todoState.length + 1, name, description },
     });
+    setName('');
+    setDescription('');
     console.log(name, description);
   };
 
@@ -44,4 +45,4 @@ const TodoInput = (): ReactElement => {
   );
 };
 
-export default TodoInput;
+export default React.memo(TodoInput);
