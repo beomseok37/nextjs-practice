@@ -34,6 +34,8 @@
         "ts": "never",
         "tsx": "never"
       }
-    ]
+    ],
+    "react/no-unescaped-entities": "off",
+    "jsx-a11y/anchor-is-valid": "off"
   }
 }
