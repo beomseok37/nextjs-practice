@@ -1,7 +1,14 @@
 import type { NextPage } from 'next';
 
+import MyButton from 'src/components/MyButton';
+import AppBlock from 'src/components/AppBlock';
+
 const Home: NextPage = () => {
-  return <div>hihihi</div>;
+  return (
+    <AppBlock>
+      <MyButton>Button</MyButton>
+    </AppBlock>
+  );
 };
 
 export default Home;
