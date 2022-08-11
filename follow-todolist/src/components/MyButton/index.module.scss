@@ -1,24 +1,57 @@
-.button {
+@import 'src/styles/utils/mixin.scss';
+
+$blue: #228be6;
+$gray: #495057;
+$pink: #f06595;
+
+.my_button {
   display: inline-flex;
-  outline: none;
-  border: none;
-  border-radius: 4px;
+  align-items: center;
   color: white;
   font-weight: bold;
+  outline: none;
+  border-radius: 4px;
+  border: none;
   cursor: pointer;
-  padding: 1rem 0;
 
   height: 2.25rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
   font-size: 1rem;
 
-  background: #228be6;
-  &:hover {
-    background: #339af0;
-  }
-  &:active {
-    background: #1c7ed6;
+  &.large {
+    @include get-size(3rem, 1rem, 1rem, 1.25rem);
   }
 
+  &.medium {
+    @include get-size(2.25rem, 1rem, 1rem, 1rem);
+  }
+
+  &.small {
+    @include get-size(1.75rem, 1rem, 1rem, 0.875rem);
+  }
+
+  // 색상 관리
+  &.blue {
+    @include button-color($blue);
+  }
+
+  &.gray {
+    @include button-color($gray);
+  }
+
+  &.pink {
+    @include button-color($pink);
+  }
+
+  background: $blue; // 주석 사용
+  &:hover {
+    background: lighten($blue, 10%); // 색상 10% 밝게
+  }
+
+  &:active {
+    background: darken($blue, 10%); // 색상 10% 어둡게
+  }
   & + & {
     margin-left: 1rem;
   }

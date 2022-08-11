@@ -1,9 +1,9 @@
-import React, { ReactElement } from 'react';
+import React, { ReactNode } from 'react';
 
 import styles from './index.module.scss';
 
 interface props {
-  children: ReactElement;
+  children: ReactNode;
 }
 
 const AppBlock = ({ children }: props): React.ReactElement => {
