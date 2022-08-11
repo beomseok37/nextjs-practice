@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { MouseEventHandler } from 'react';
 
 import classNames from 'classnames';
 import styles from './index.module.scss';
@@ -8,6 +8,9 @@ interface props {
   size?: 'large' | 'normal' | 'small';
   color?: 'blue' | 'gray' | 'pink';
   outline?: boolean;
+  fullWidth?: boolean;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
+  onMouseMove?: MouseEventHandler<HTMLButtonElement>;
 }
 
 const MyButton = ({
@@ -15,6 +18,8 @@ const MyButton = ({
   size,
   color,
   outline,
+  fullWidth,
+  ...rest
 }: props): React.ReactElement => {
   return (
     <button
@@ -23,9 +28,11 @@ const MyButton = ({
         styles.my_button,
         styles[`${size}`],
         styles[`${color}`],
-        outline && styles.outline
+        outline && styles.outline,
+        fullWidth && styles.fullWidth
       )}
       aria-label="my-button"
+      {...rest}
     >
       {children}
     </button>
@@ -36,6 +43,9 @@ MyButton.defaultProps = {
   size: 'medium',
   color: 'blue',
   outline: false,
+  fullWidth: false,
+  onClick: () => {},
+  onMouseMove: () => {},
 };
 
 export default MyButton;

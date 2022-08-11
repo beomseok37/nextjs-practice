@@ -19,6 +19,15 @@ $pink: #f06595;
   padding-right: 1rem;
   font-size: 1rem;
 
+  &.fullWidth {
+    width: 100%;
+    justify-content: center;
+    & + & {
+      margin-left: 0;
+      margin-top: 1rem;
+    }
+  }
+
   &.large {
     @include get-size(3rem, 1rem, 1rem, 1.25rem);
   }
