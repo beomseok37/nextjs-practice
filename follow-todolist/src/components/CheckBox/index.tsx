@@ -13,7 +13,7 @@ interface props {
 const CheckBox = ({ checked, children, onChange }: props): ReactElement => {
   return (
     <div className={styles.box_wrapper}>
-      <label className={styles.flex}>
+      <label>
         <input
           type="checkbox"
           checked={checked}
