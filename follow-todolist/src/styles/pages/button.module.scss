@@ -1,0 +1,6 @@
+.button_group {
+  & + & {
+    margin-top: 1rem;
+  }
+  padding: 10px;
+}
