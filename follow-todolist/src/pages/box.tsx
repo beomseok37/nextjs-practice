@@ -5,7 +5,7 @@ import Box from 'src/components/Box';
 import CheckBox from 'src/components/CheckBox';
 import Header from 'src/components/header';
 
-import styles from 'src/styles/pages/box.module.scss';
+import { Check } from 'src/styles/pages/box';
 
 const BoxPage: NextPage = () => {
   const [check, setCheck] = useState<boolean>(false);
@@ -19,10 +19,10 @@ const BoxPage: NextPage = () => {
       <CheckBox onChange={handleChange} checked={check}>
         다음 약관에 모두 동의
       </CheckBox>
-      <p className={styles.check}>
+      <Check>
         check:
         {check ? 'true' : 'false'}
-      </p>
+      </Check>
     </>
   );
 };

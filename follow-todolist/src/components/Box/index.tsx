@@ -1,9 +1,9 @@
 import React from 'react';
 
-import styles from './index.module.scss';
+import { Wrapper } from './style';
 
 const Box = (): React.ReactElement => {
-  return <div className={styles.box}>{styles.box}</div>;
+  return <Wrapper>This is Box Component</Wrapper>;
 };
 
 export default Box;

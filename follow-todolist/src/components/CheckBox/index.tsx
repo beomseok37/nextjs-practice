@@ -2,7 +2,7 @@ import { ChangeEventHandler, ReactElement, ReactNode } from 'react';
 
 import { ImCheckboxChecked, ImCheckboxUnchecked } from 'react-icons/im';
 
-import styles from './index.module.scss';
+import { Wrapper, None } from './style';
 
 interface props {
   checked?: boolean;
@@ -12,19 +12,14 @@ interface props {
 
 const CheckBox = ({ checked, children, onChange }: props): ReactElement => {
   return (
-    <div className={styles.box_wrapper}>
+    <Wrapper>
       <label>
-        <input
-          type="checkbox"
-          checked={checked}
-          onChange={onChange}
-          className={styles.none}
-        />
+        <None type="checkbox" checked={checked} onChange={onChange} />
         {checked ? <ImCheckboxChecked /> : <ImCheckboxUnchecked />}
         <div>{checked ? '체크됨' : '체크 안됨'}</div>
       </label>
       <span>{children}</span>
-    </div>
+    </Wrapper>
   );
 };
 

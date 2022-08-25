@@ -4,14 +4,14 @@ import MyButton from 'src/components/MyButton';
 import AppBlock from 'src/components/AppBlock';
 import Header from 'src/components/header';
 
-import styles from 'src/styles/pages/button.module.scss';
+import { ButtonGroup } from 'src/styles/pages/button';
 
 const ButtonPage: NextPage = () => {
   return (
     <>
       <Header pageName="home" />
       <AppBlock>
-        <div className={styles.button_group}>
+        <ButtonGroup>
           <MyButton
             size="large"
             onClick={() => {
@@ -28,8 +28,8 @@ const ButtonPage: NextPage = () => {
             Button
           </MyButton>
           <MyButton size="small">Button</MyButton>
-        </div>
-        <div className={styles.button_group}>
+        </ButtonGroup>
+        <ButtonGroup>
           <MyButton size="large" color="gray">
             Button
           </MyButton>
@@ -37,8 +37,8 @@ const ButtonPage: NextPage = () => {
           <MyButton size="small" color="gray">
             Button
           </MyButton>
-        </div>
-        <div className={styles.button_group}>
+        </ButtonGroup>
+        <ButtonGroup>
           <MyButton size="large" color="pink">
             Button
           </MyButton>
@@ -46,8 +46,8 @@ const ButtonPage: NextPage = () => {
           <MyButton size="small" color="pink">
             Button
           </MyButton>
-        </div>
-        <div className={styles.button_group}>
+        </ButtonGroup>
+        <ButtonGroup>
           <MyButton size="large" color="pink" outline>
             Button
           </MyButton>
@@ -57,8 +57,8 @@ const ButtonPage: NextPage = () => {
           <MyButton size="small" color="pink" outline>
             Button
           </MyButton>
-        </div>
-        <div className={styles.button_group}>
+        </ButtonGroup>
+        <ButtonGroup>
           <MyButton size="large" fullWidth>
             Button
           </MyButton>
@@ -68,7 +68,7 @@ const ButtonPage: NextPage = () => {
           <MyButton size="small" color="pink" fullWidth>
             Button
           </MyButton>
-        </div>
+        </ButtonGroup>
       </AppBlock>
     </>
   );
