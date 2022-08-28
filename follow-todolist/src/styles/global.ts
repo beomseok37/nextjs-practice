@@ -1,6 +1,9 @@
 import { css } from '@emotion/react';
 
+import { woowaFont } from './font/woowa';
+
 const global = css`
+  ${woowaFont}
   html,
   body,
   div,
@@ -81,15 +84,15 @@ const global = css`
   time,
   mark,
   audio,
-  video {
+  video,
+  button {
     margin: 0;
     padding: 0;
     border: 0;
     font-size: 0;
     font: inherit;
     vertical-align: baseline;
-    // font-family: InkLipquid;
-    font-family: 'Noto Sans', 'malgun gothic', AppleGothic, dotum, sans-serif;
+    font-family: woowaFont;
     font-size: 1rem;
     font-weight: bold;
   }
@@ -134,12 +137,6 @@ const global = css`
   table {
     border-collapse: collapse;
     border-spacing: 0;
-  }
-
-  @font-face {
-    font-family: 'InkLipquid';
-    font-weight: 200;
-    src: url('/font/InkLipquidFonts.ttf') format('truetype');
   }
 `;
 
