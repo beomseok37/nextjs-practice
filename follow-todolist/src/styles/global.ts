@@ -116,7 +116,7 @@ const global = css`
     justify-content: center;
   }
   body {
-    width: 80%;
+    width: 100%;
     line-height: 1;
   }
   ol,
