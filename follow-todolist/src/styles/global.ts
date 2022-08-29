@@ -112,11 +112,13 @@ const global = css`
   }
   html {
     width: 100%;
+    height: 100%;
     display: flex;
     justify-content: center;
   }
   body {
     width: 100%;
+    height: 100%;
     line-height: 1;
   }
   ol,
@@ -137,6 +139,9 @@ const global = css`
   table {
     border-collapse: collapse;
     border-spacing: 0;
+  }
+  #__next {
+    height: 100%;
   }
 `;
 
