@@ -7,6 +7,8 @@ import Header from 'src/components/Header';
 import Row from 'src/components/Grid/Row';
 import Column from 'src/components/Grid/Column';
 import SideBar from 'src/components/SideBar';
+import PageContent from 'src/components/PageContent';
+import { BOX_PAGE_CONTENT } from 'src/constant/page';
 
 import { Check } from 'src/styles/pages';
 
@@ -20,6 +22,7 @@ const BoxPage: NextPage = () => {
       <SideBar />
       <Column>
         <Header pageName="box" />
+        <PageContent content={BOX_PAGE_CONTENT} />
         <Box />
         <CheckBox onChange={handleChange} checked={check}>
           다음 약관에 모두 동의

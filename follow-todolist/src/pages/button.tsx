@@ -6,6 +6,7 @@ import Header from 'src/components/Header';
 import Row from 'src/components/Grid/Row';
 import Column from 'src/components/Grid/Column';
 import SideBar from 'src/components/SideBar';
+import PageContent from 'src/components/PageContent';
 
 import { BUTTON_PAGE_CONTENT } from 'src/constant/page';
 
@@ -17,6 +18,7 @@ const ButtonPage: NextPage = () => {
       <SideBar />
       <Column>
         <Header pageName="button" />
+        <PageContent content={BUTTON_PAGE_CONTENT} done />
         <AppBlock>
           <ButtonGroup>
             <MyButton size="large">Button</MyButton>
