@@ -93,7 +93,7 @@ const global = css`
     font-size: 0;
     font: inherit;
     vertical-align: baseline;
-    font-family: 'Hanna', fantasy;
+    // font-family: 'Hanna', fantasy;
     font-size: 1rem;
     font-weight: bold;
   }
