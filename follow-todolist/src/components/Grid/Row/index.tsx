@@ -8,6 +8,7 @@ interface props {
   height?: string;
   justifyContent?: string;
   alignItems?: string;
+  padding?: string;
 }
 
 function Row({
@@ -16,6 +17,7 @@ function Row({
   height,
   justifyContent,
   alignItems,
+  padding,
 }: props): ReactElement {
   return (
     <Wrapper
@@ -23,6 +25,7 @@ function Row({
       height={height!}
       justifyContent={justifyContent!}
       alignItems={alignItems!}
+      padding={padding!}
     >
       {children}
     </Wrapper>
@@ -34,6 +37,7 @@ Row.defaultProps = {
   height: '100%',
   justifyContent: 'unset',
   alignItems: 'unset',
+  padding: 'unset',
 };
 
 export default Row;
