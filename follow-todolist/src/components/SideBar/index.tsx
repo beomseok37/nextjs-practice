@@ -1,4 +1,4 @@
-import { useRouter } from 'next/router';
+import Router from 'next/router';
 import { ReactElement, useState } from 'react';
 import { GiHamburgerMenu } from 'react-icons/gi';
 
@@ -13,7 +13,6 @@ import {
 import { ButtonWrapper, ToggleButton, IconCSS, Anchor } from './style';
 
 function SideBar(): ReactElement {
-  const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const menuList = ['button', 'box'];
 
@@ -22,7 +21,7 @@ function SideBar(): ReactElement {
   };
 
   const handleRoute = (path: string) => {
-    router.push(`${path}`);
+    Router.push(`${path}`);
   };
   return (
     <Column
