@@ -1,5 +1,6 @@
 import { ReactElement } from 'react';
 import Router from 'next/router';
+import Link from 'next/link';
 import MyButton from 'src/components/MyButton';
 
 import { Wrapper, Title } from './style';
@@ -14,7 +15,9 @@ const Header = ({ pageName }: props): ReactElement => {
   };
   return (
     <Wrapper>
-      <Title>cotton's {pageName} page</Title>
+      <Link href="/">
+        <Title>cotton's {pageName} page</Title>
+      </Link>
       <MyButton size="small" onClick={handleClick}>
         return
       </MyButton>

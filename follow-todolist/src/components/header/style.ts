@@ -6,11 +6,14 @@ const Wrapper = styled.div`
   align-items: center;
   top: 0px;
   height: 5rem;
-  background: #eee;
+  padding: 0 1rem;
 `;
 
-const Title = styled.p`
+const Title = styled.a`
   font-size: 28px;
+  &:hover {
+    cursor: pointer;
+  }
 `;
 
 export { Wrapper, Title };
