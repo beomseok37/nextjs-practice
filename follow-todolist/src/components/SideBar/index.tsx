@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router';
 import { ReactElement, useState } from 'react';
 import { GiHamburgerMenu } from 'react-icons/gi';
 
@@ -6,28 +7,46 @@ import Column from 'src/components/Grid/Column';
 import {
   SIDE_BAR_OPEN_WIDTH,
   SIDE_BAR_CLOSE_WIDTH,
+  SIDE_BAR_HEIGHT,
 } from 'src/constant/sideBar';
 
-import { ButtonWrapper, Button, rotateCSS } from './style';
+import { ButtonWrapper, ToggleButton, IconCSS, Anchor } from './style';
 
 function SideBar(): ReactElement {
+  const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
+  const menuList = ['button', 'box'];
 
   const handleToggle = () => {
     setIsOpen(!isOpen);
   };
 
+  const handleRoute = (path: string) => {
+    router.push(`${path}`);
+  };
   return (
     <Column
       width={isOpen ? SIDE_BAR_OPEN_WIDTH : SIDE_BAR_CLOSE_WIDTH}
+      height={SIDE_BAR_HEIGHT}
       alignItems="center"
+      background="sideBar"
       transition
     >
       <ButtonWrapper>
-        <Button onClick={handleToggle}>
-          <GiHamburgerMenu size={32} css={rotateCSS} />
-        </Button>
+        <ToggleButton onClick={handleToggle} isOpen={isOpen}>
+          <GiHamburgerMenu size={24} css={IconCSS} />
+        </ToggleButton>
       </ButtonWrapper>
+
+      {isOpen && (
+        <>
+          {menuList.map((menu) => (
+            <Anchor key={menu} onClick={() => handleRoute(menu)}>
+              {menu}
+            </Anchor>
+          ))}
+        </>
+      )}
     </Column>
   );
 }
