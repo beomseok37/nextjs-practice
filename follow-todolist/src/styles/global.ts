@@ -3,6 +3,7 @@ import { css } from '@emotion/react';
 import { woowaFont } from './font/woowa';
 
 const global = css`
+  @import url(//fonts.googleapis.com/earlyaccess/hanna.css);
   ${woowaFont}
   html,
   body,
@@ -92,7 +93,7 @@ const global = css`
     font-size: 0;
     font: inherit;
     vertical-align: baseline;
-    font-family: woowaFont;
+    font-family: 'Hanna', fantasy;
     font-size: 1rem;
     font-weight: bold;
   }
