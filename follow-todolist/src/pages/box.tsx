@@ -8,7 +8,7 @@ import Row from 'src/components/Grid/Row';
 import Column from 'src/components/Grid/Column';
 import SideBar from 'src/components/SideBar';
 
-import { Check } from 'src/styles/pages/box';
+import { Check } from 'src/styles/pages';
 
 const BoxPage: NextPage = () => {
   const [check, setCheck] = useState<boolean>(false);

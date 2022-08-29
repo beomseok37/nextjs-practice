@@ -7,7 +7,9 @@ import Row from 'src/components/Grid/Row';
 import Column from 'src/components/Grid/Column';
 import SideBar from 'src/components/SideBar';
 
-import { ButtonGroup } from 'src/styles/pages/button';
+import { BUTTON_PAGE_CONTENT } from 'src/constant/page';
+
+import { ButtonGroup } from 'src/styles/pages';
 
 const ButtonPage: NextPage = () => {
   return (

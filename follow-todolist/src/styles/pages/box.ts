@@ -5,5 +5,4 @@ const Check = styled.p`
   font-size: 2rem;
 `;
 
-// eslint-disable-next-line import/prefer-default-export
-export { Check };
+export default Check;

@@ -7,5 +7,4 @@ const ButtonGroup = styled.div`
   padding: 10px;
 `;
 
-// eslint-disable-next-line import/prefer-default-export
-export { ButtonGroup };
+export default ButtonGroup;
