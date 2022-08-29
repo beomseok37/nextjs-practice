@@ -1,4 +1,4 @@
-import React, { ReactElement } from 'react';
+import { ReactElement } from 'react';
 import Router from 'next/router';
 import MyButton from 'src/components/MyButton';
 

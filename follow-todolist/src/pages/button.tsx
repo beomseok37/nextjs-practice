@@ -2,7 +2,7 @@ import { NextPage } from 'next';
 
 import MyButton from 'src/components/MyButton';
 import AppBlock from 'src/components/AppBlock';
-import Header from 'src/components/header';
+import Header from 'src/components/Header';
 
 import { ButtonGroup } from 'src/styles/pages/button';
 

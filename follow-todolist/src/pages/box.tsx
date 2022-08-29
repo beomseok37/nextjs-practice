@@ -3,7 +3,7 @@ import React, { useState } from 'react';
 
 import Box from 'src/components/Box';
 import CheckBox from 'src/components/CheckBox';
-import Header from 'src/components/header';
+import Header from 'src/components/Header';
 
 import { Check } from 'src/styles/pages/box';
 
