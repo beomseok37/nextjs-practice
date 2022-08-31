@@ -9,6 +9,7 @@ interface props {
   alignItems: string;
   transition: boolean;
   background: SideBarColorType;
+  padding: string;
 }
 
 const Wrapper = styled.div<props>`
@@ -20,7 +21,8 @@ const Wrapper = styled.div<props>`
   justify-content: ${({ justifyContent }) => justifyContent};
   align-items: ${({ alignItems }) => alignItems};
   ${({ transition }) => transition && `transition: all ease 0.8s;`}
-  background: ${({ theme, background }) => theme.backgroundColors[background]}
+  background: ${({ theme, background }) => theme.backgroundColors[background]};
+  padding:${({ padding }) => padding};
 `;
 
 // eslint-disable-next-line import/prefer-default-export

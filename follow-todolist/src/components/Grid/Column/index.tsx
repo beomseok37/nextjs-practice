@@ -12,6 +12,7 @@ interface props {
   alignItems?: string;
   transition?: boolean;
   background?: SideBarColorType;
+  padding?: string;
 }
 
 function Column({
@@ -22,6 +23,7 @@ function Column({
   alignItems,
   transition,
   background,
+  padding,
 }: props): ReactElement {
   return (
     <Wrapper
@@ -31,6 +33,7 @@ function Column({
       alignItems={alignItems!}
       transition={transition!}
       background={background!}
+      padding={padding!}
     >
       {children}
     </Wrapper>
@@ -44,6 +47,7 @@ Column.defaultProps = {
   alignItems: 'unset',
   transition: false,
   background: 'unset',
+  padding: 'unset',
 };
 
 export default Column;
