@@ -19,7 +19,7 @@ const ReactHooks: NextPage = () => {
     <Row height="100%" width="100%">
       <SideBar />
       <Column width="100%" justifyContent="flex-start">
-        <Header pageName="box" />
+        <Header pageName="react-hooks" />
         <PageContent content={REACT_HOOKS_PAGE_CONTENT} />
         <Row justifyContent="space-around">
           <Column alignItems="center">
