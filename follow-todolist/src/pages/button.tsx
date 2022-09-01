@@ -14,9 +14,9 @@ import { ButtonGroup } from 'src/styles/pages';
 
 const ButtonPage: NextPage = () => {
   return (
-    <Row>
+    <Row height="100%" width="100%">
       <SideBar />
-      <Column>
+      <Column width="100%">
         <Header pageName="button" />
         <PageContent content={BUTTON_PAGE_CONTENT} done />
         <AppBlock>

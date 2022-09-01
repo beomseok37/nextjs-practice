@@ -18,9 +18,9 @@ const BoxPage: NextPage = () => {
     setCheck(e.currentTarget.checked);
   };
   return (
-    <Row>
+    <Row height="100%" width="100%">
       <SideBar />
-      <Column>
+      <Column width="100%">
         <Header pageName="box" />
         <PageContent content={BOX_PAGE_CONTENT} />
         <Box />

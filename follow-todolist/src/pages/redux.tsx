@@ -11,9 +11,9 @@ import { REDUX_PAGE_CONTENT } from 'src/constant/page';
 
 const Redux: NextPage = () => {
   return (
-    <Row>
+    <Row height="100%" width="100%">
       <SideBar />
-      <Column>
+      <Column width="100%">
         <Header pageName="Redux" />
         <p>이 페이지는 Redux를 공부하기 위한 페이지이다.</p>
         <PageContent content={REDUX_PAGE_CONTENT} />

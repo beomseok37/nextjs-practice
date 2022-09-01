@@ -41,8 +41,8 @@ function Column({
 }
 
 Column.defaultProps = {
-  width: '100%',
-  height: '100%',
+  width: 'unset',
+  height: 'unset',
   justifyContent: 'unset',
   alignItems: 'unset',
   transition: false,
