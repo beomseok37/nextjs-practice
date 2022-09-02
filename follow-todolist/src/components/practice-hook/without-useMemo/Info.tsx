@@ -5,7 +5,6 @@ interface props {
   movie: string;
 }
 const getColorKor = (color: string) => {
-  console.log('getColorKor');
   switch (color) {
     case 'red':
       return '빨강';
