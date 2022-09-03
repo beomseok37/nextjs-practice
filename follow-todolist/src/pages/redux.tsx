@@ -6,6 +6,7 @@ import Row from 'src/components/Grid/Row';
 import Column from 'src/components/Grid/Column';
 import ReduxCounter from 'src/components/ReduxCounter';
 import PageContent from 'src/components/PageContent';
+import ReduxTodoList from 'src/components/ReduxTodoList';
 
 import { REDUX_PAGE_CONTENT } from 'src/constant/page';
 
@@ -18,6 +19,7 @@ const Redux: NextPage = () => {
         <p>이 페이지는 Redux를 공부하기 위한 페이지이다.</p>
         <PageContent content={REDUX_PAGE_CONTENT} />
         <ReduxCounter />
+        <ReduxTodoList />
       </Column>
     </Row>
   );
