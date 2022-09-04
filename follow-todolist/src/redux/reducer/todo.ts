@@ -1,34 +1,28 @@
 /* eslint-disable no-param-reassign */
 import { createSlice } from '@reduxjs/toolkit';
-// import type { PayloadAction } from '@reduxjs/toolkit';
-// import type { RootState } from 'src/redux/store';
+import type { PayloadAction } from '@reduxjs/toolkit';
+import type { RootState } from 'src/redux/store';
+import TodoType from 'src/types/toDo';
 
-// interface TodoListState {
-//   value: number;
-// }
+const initialState: TodoType[] = [];
 
-// const initialState: TodoListState = {
-//   value: 0,
-// };
-
-export const counterSlice = createSlice({
+export const todoListSlice = createSlice({
   name: 'todoList',
-  //   initialState,
-  //   reducers: {
-  //     increment: (state) => {
-  //       state.value += 1;
-  //     },
-  //     decrement: (state) => {
-  //       state.value -= 1;
-  //     },
-  //     incrementByAmount: (state, action: PayloadAction<number>) => {
-  //       state.value += action.payload;
-  //     },
-  //   },
+  initialState,
+  reducers: {
+    add: (state, action: PayloadAction<TodoType>) => {
+      state.push(action.payload);
+    },
+    remove: (state, action: PayloadAction<TodoType>) => {
+      state = state.filter((todo) => {
+        return todo.work !== action.payload.work;
+      });
+    },
+  },
 });
 
-// export const { increment, decrement, incrementByAmount } = counterSlice.actions;
+export const { add, remove } = todoListSlice.actions;
 
-// export const selectCount = (state: RootState) => state.counter.value;
+export const selectTodoList = (state: RootState) => state.todoList;
 
-export default counterSlice.reducer;
+export default todoListSlice.reducer;
