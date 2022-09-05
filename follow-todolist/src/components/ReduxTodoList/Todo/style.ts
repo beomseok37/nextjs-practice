@@ -17,7 +17,8 @@ const TodoWrapper = styled.div<TodoWrapperProps>`
   padding: 10px 20px;
   width: 300px;
   background: ${({ check }) => (check ? '#fff' : '#eee')};
-  border-radius: 20px;
+  border: ${({ check }) => (check ? '1px solid #eee' : 'none')};
+  border-radius: 4px;
   margin-bottom: 10px;
   transition: all ease 0.8s;
 `;
@@ -33,10 +34,10 @@ const IconButton = styled.button<IconButtonProps>`
   padding: 2px;
   margin-left: 8px;
   background: ${({ done, check }) =>
-    done ? (check ? '#bbb' : '#74D19D') : '#e08eb1'};
+    done ? (check ? '#ccc' : '#74D19D') : '#e08eb1'};
   border-radius: 10px;
   box-shadow: 1px 1px 1px 1px
-    ${({ done, check }) => (done ? (check ? '#444' : '#006400') : '#b9062f')};
+    ${({ done, check }) => (done ? (check ? '#444' : '#888') : '#b9062f')};
   &:hover {
     cursor: pointer;
   }
