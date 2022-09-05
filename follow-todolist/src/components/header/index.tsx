@@ -1,7 +1,7 @@
 import { ReactElement } from 'react';
 import Router from 'next/router';
 import Link from 'next/link';
-import MyButton from 'src/components/MyButton';
+import Button from 'src/components/base/Button';
 
 import { Wrapper, Title } from './style';
 
@@ -18,9 +18,9 @@ const Header = ({ pageName }: props): ReactElement => {
       <Link href="/">
         <Title>cotton's {pageName} page</Title>
       </Link>
-      <MyButton size="small" onClick={handleClick}>
+      <Button size="small" onClick={handleClick}>
         return
-      </MyButton>
+      </Button>
     </Wrapper>
   );
 };

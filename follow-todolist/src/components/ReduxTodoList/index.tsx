@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import Column from 'src/components/Grid/Column';
 import Row from 'src/components/Grid/Row';
 import Input from 'src/components/base/Input';
-import MyButton from 'src/components/MyButton';
+import Button from 'src/components/base/Button';
 import { selectTodoList, add } from 'src/redux/reducer/todo';
 
 import Todo from './Todo';
@@ -35,7 +35,7 @@ function ReduxTodoList(): ReactElement {
           onChange={handleChange}
           value={todoInput}
         />
-        <MyButton onClick={handleAddTodo}>add</MyButton>
+        <Button onClick={handleAddTodo}>add</Button>
       </Row>
       <Row padding="4px">
         <P>총 할 일:</P>

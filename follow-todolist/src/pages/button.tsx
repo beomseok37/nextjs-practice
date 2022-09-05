@@ -1,6 +1,6 @@
 import { NextPage } from 'next';
 
-import MyButton from 'src/components/MyButton';
+import Button from 'src/components/base/Button';
 import AppBlock from 'src/components/AppBlock';
 import Header from 'src/components/Header';
 import Row from 'src/components/Grid/Row';
@@ -21,49 +21,49 @@ const ButtonPage: NextPage = () => {
         <PageContent content={BUTTON_PAGE_CONTENT} done />
         <AppBlock>
           <ButtonGroup>
-            <MyButton size="large">Button</MyButton>
-            <MyButton>Button</MyButton>
-            <MyButton size="small">Button</MyButton>
+            <Button size="large">Button</Button>
+            <Button>Button</Button>
+            <Button size="small">Button</Button>
           </ButtonGroup>
           <ButtonGroup>
-            <MyButton size="large" color="gray">
+            <Button size="large" color="gray">
               Button
-            </MyButton>
-            <MyButton color="gray">Button</MyButton>
-            <MyButton size="small" color="gray">
+            </Button>
+            <Button color="gray">Button</Button>
+            <Button size="small" color="gray">
               Button
-            </MyButton>
+            </Button>
           </ButtonGroup>
           <ButtonGroup>
-            <MyButton size="large" color="pink">
+            <Button size="large" color="pink">
               Button
-            </MyButton>
-            <MyButton color="pink">Button</MyButton>
-            <MyButton size="small" color="pink">
+            </Button>
+            <Button color="pink">Button</Button>
+            <Button size="small" color="pink">
               Button
-            </MyButton>
+            </Button>
           </ButtonGroup>
           <ButtonGroup>
-            <MyButton size="large" color="pink" outline>
+            <Button size="large" color="pink" outline>
               Button
-            </MyButton>
-            <MyButton color="pink" outline>
+            </Button>
+            <Button color="pink" outline>
               Button
-            </MyButton>
-            <MyButton size="small" color="pink" outline>
+            </Button>
+            <Button size="small" color="pink" outline>
               Button
-            </MyButton>
+            </Button>
           </ButtonGroup>
           <ButtonGroup>
-            <MyButton size="large" fullWidth>
+            <Button size="large" fullWidth>
               Button
-            </MyButton>
-            <MyButton color="gray" fullWidth>
+            </Button>
+            <Button color="gray" fullWidth>
               Button
-            </MyButton>
-            <MyButton size="small" color="pink" fullWidth>
+            </Button>
+            <Button size="small" color="pink" fullWidth>
               Button
-            </MyButton>
+            </Button>
           </ButtonGroup>
         </AppBlock>
       </Column>
