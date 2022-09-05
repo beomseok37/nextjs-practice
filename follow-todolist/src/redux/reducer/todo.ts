@@ -30,10 +30,16 @@ export const todoListSlice = createSlice({
         return todo;
       });
     },
+    removeAll: (state) => {
+      const newTodoList = state.todoList.filter((todo) => !todo.check);
+      if (newTodoList.length !== state.todoList.length) {
+        state.todoList = newTodoList;
+      }
+    },
   },
 });
 
-export const { add, remove, check } = todoListSlice.actions;
+export const { add, remove, check, removeAll } = todoListSlice.actions;
 
 export const selectTodoList = (state: RootState) => state.todoList.todoList;
 
