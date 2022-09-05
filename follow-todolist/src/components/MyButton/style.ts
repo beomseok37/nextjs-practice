@@ -55,6 +55,14 @@ const Button = styled.button<props>`
   }
 
   margin-left: 1rem;
+
+  box-shadow: 1px 1px 1px 1px #0d5594;
+  &:hover {
+    cursor: pointer;
+  }
+  &:active {
+    box-shadow: none;
+  }
 `;
 
 // eslint-disable-next-line import/prefer-default-export
