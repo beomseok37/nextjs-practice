@@ -3,6 +3,7 @@ import ButtonSizeType from './buttonSize';
 import SideBarColorType from './sideBarColor';
 import TodoType from './toDo';
 import CounterType from './counter';
+import PageContentType from './pageContent';
 
 export type {
   ButtonColorType,
@@ -10,4 +11,5 @@ export type {
   SideBarColorType,
   TodoType,
   CounterType,
+  PageContentType,
 };
