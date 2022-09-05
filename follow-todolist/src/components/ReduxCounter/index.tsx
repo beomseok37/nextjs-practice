@@ -30,7 +30,7 @@ function ReduxCounter(): ReactElement {
         <Button onClick={() => dispatch(decrement())}>-</Button>
       </Row>
       <Row>
-        <Input onChange={handleChange} type="number" />
+        <Input onChange={handleChange} type="number" value={amount} />
         <Button onClick={() => dispatch(incrementByAmount(+amount))} big>
           Amount plus
         </Button>
