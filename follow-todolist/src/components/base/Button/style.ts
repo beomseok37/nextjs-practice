@@ -21,6 +21,7 @@ const Button = styled.button<props>`
   border: none;
   cursor: pointer;
 
+  width: 60px;
   height: 2.25rem;
   padding-left: 1rem;
   padding-right: 1rem;
