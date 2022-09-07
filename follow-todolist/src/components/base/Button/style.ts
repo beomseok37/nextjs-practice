@@ -12,7 +12,8 @@ interface props {
 }
 
 const Button = styled.button<props>`
-  display: inline-flex;
+  display: flex;
+  justify-content: center;
   align-items: center;
   color: white;
   font-weight: bold;
