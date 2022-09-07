@@ -3,6 +3,7 @@ import styled from '@emotion/styled';
 interface props {
   rotateY?: string;
   rotateX?: string;
+  rotateZ?: string;
   color: string;
 }
 
@@ -26,15 +27,18 @@ const MoveBox = styled.div<props>`
   width: 100px;
   height: 100px;
   transition: all ease 0.5s;
-  ${({ rotateY }) =>
+  ${({ rotateY, rotateX }) =>
     rotateY &&
+    rotateX &&
     `
-  transform: rotateY(${rotateY}deg) translateZ(50px)
+  transform: rotateY(${rotateY}deg) rotateX(${rotateX}deg) translateZ(50px)
   `};
-  ${({ rotateX }) =>
-    rotateX && `transform: rotateX(${rotateX}deg) translateZ(50px)`};
+  ${({ rotateX, rotateZ }) =>
+    rotateX &&
+    rotateZ &&
+    `transform: rotateX(${rotateX}deg) rotateZ(${rotateZ}deg) translateZ(50px)`};
   background: ${({ color }) => color};
-  opacity: 0.7;
+  opacity: 0.8;
 `;
 
 export { MoveBox, Rotate, Scene };
