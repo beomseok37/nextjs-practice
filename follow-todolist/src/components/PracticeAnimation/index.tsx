@@ -10,7 +10,7 @@ function PracticeAnimation(): ReactElement {
   const [frontAngle, setFrontAngle] = useState('0');
   const [topAngle, setTopAngle] = useState('90');
 
-  const sideList = ['Front', 'Right', 'Back', 'Left'];
+  const sideList = ['Front', 'Right', 'Back', 'Left', 'Top', 'Bottom'];
 
   const handleClick = (side: string) => {
     switch (side) {
