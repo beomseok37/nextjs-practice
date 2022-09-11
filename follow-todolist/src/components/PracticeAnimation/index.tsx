@@ -26,12 +26,12 @@ function PracticeAnimation(): ReactElement {
       case 'Left':
         setFrontAngle('90');
         break;
-      // case 'Top':
-      //   setTopAngle('0');
-      //   break;
-      // case 'Bottom':
-      //   setTopAngle('180');
-      //   break;
+      case 'Top':
+        setTopAngle('0');
+        break;
+      case 'Bottom':
+        setTopAngle('180');
+        break;
       default:
         console.error('wrong input');
         break;
