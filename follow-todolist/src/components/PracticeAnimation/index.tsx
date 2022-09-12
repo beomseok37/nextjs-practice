@@ -33,7 +33,7 @@ function PracticeAnimation(): ReactElement {
         setTopAngle('180');
         break;
       default:
-        console.error('wrong input');
+        console.log('wrong input');
         break;
     }
   };
