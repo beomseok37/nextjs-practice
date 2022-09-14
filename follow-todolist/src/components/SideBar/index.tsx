@@ -12,7 +12,14 @@ import {
 
 import { ButtonWrapper, ToggleButton, IconCSS, Anchor } from './style';
 
-const menuList = ['button', 'box', 'redux', 'react-hooks', 'animation'];
+const menuList = [
+  'button',
+  'box',
+  'redux',
+  'react-hooks',
+  'animation',
+  'dropdown-menu',
+];
 
 function SideBar(): ReactElement {
   const [isOpen, setIsOpen] = useState(false);
