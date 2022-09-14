@@ -9,8 +9,8 @@ interface props {
 
 const Scene = styled.div`
   width: 300px;
-  height: 300px;
-  padding: 100px;
+  height: 100px;
+  padding: 50px;
   perspective: 400px;
 `;
 
