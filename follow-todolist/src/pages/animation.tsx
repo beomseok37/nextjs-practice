@@ -7,7 +7,7 @@ const Animation: NextPage = () => {
   return (
     <Page
       header="animation"
-      pageContentList={[{ content: 'transform, translateZ 공부', done: false }]}
+      pageContentList={[{ content: 'transform, translate 공부', done: true }]}
     >
       <PracticeAnimation />
     </Page>
