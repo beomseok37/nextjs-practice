@@ -27,16 +27,10 @@ const MoveBox = styled.div<props>`
   width: 100px;
   height: 100px;
   transition: all ease 0.5s;
-  ${({ rotateY, rotateX }) =>
-    rotateY &&
-    rotateX &&
-    `
-  transform: rotateY(${rotateY}deg) rotateX(${rotateX}deg) translateZ(50px)
-  `};
-  ${({ rotateX, rotateZ }) =>
-    rotateX &&
-    rotateZ &&
-    `transform: rotateX(${rotateX}deg) rotateZ(${rotateZ}deg) translateZ(50px)`};
+  transform: ${({ rotateX, rotateY }) =>
+    rotateX
+      ? `rotateY(${rotateY}deg) rotateX(${rotateX}) translateZ(50px)`
+      : `rotateY(${rotateY}deg) translateZ(50px)`};
   background: ${({ color }) => color};
   opacity: 0.8;
 `;
