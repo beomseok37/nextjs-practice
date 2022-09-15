@@ -26,7 +26,6 @@ function DropdownMenu({ bind, menuList }: props): ReactElement {
   };
   const handleClickMenu = (e: MouseEvent<HTMLParagraphElement>) => {
     setMenuState(e.currentTarget.innerText);
-    console.log(e.currentTarget.innerText);
   };
 
   return (
