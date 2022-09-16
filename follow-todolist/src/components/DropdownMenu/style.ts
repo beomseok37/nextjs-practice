@@ -1,6 +1,10 @@
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 
+interface MenuProps {
+  index: number;
+}
+
 const MenuDefault = css`
   width: 150px;
   height: 25px;
@@ -24,6 +28,24 @@ const growDown = css`
     }
     100% {
       transform: scaleY(1);
+    }
+  }
+`;
+
+const scaleZ = css`
+  @keyframes scaleZ {
+    0% {
+      opacity: 0;
+      transform: scale(0);
+    }
+
+    80% {
+      transform: scale(1.07);
+    }
+
+    100% {
+      opacity: 1;
+      transform: scale(1);
     }
   }
 `;
@@ -54,9 +76,12 @@ const Menu1 = styled.p`
   background: #eee;
 `;
 
-const Menu = styled.p`
+const Menu2 = styled.p<MenuProps>`
   ${MenuDefault}
+  ${scaleZ}
   background: #eee;
+  transform-origin: top center;
+  animation: scaleZ ${({ index }) => `${index * 60}ms`} ease-in-out forwards;
 `;
 
 export { Background, DropdownMenuWrapper, MenuBase, MenuList, Menu1, Menu2 };

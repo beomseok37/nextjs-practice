@@ -26,6 +26,7 @@ interface props {
 function DropdownMenu({ bind, menuList }: props): ReactElement {
   const [menuState, setMenuState] = bind;
   const [isDropdown1, setIsDropdown1] = useState(false);
+  const [isDropdown2, setIsDropdown2] = useState(false);
   const menuBaseRef = useRef<HTMLDivElement>(null);
   const handleClickBase1 = () => {
     setIsDropdown1(!isDropdown1);
@@ -39,6 +40,19 @@ function DropdownMenu({ bind, menuList }: props): ReactElement {
   const handleClickMenu1 = (e: MouseEvent<HTMLParagraphElement>) => {
     setMenuState(e.currentTarget.innerText);
     setIsDropdown1(false);
+  };
+  const handleClickBase2 = () => {
+    setIsDropdown2(!isDropdown2);
+    if (isDropdown1) {
+      setIsDropdown1(false);
+    }
+  };
+  const handleCloseDropdownMenu2 = () => {
+    setIsDropdown2(false);
+  };
+  const handleClickMenu2 = (e: MouseEvent<HTMLParagraphElement>) => {
+    setMenuState(e.currentTarget.innerText);
+    setIsDropdown2(false);
   };
 
   return (
@@ -58,16 +72,26 @@ function DropdownMenu({ bind, menuList }: props): ReactElement {
           </MenuList>
         )}
       </DropdownMenuWrapper>
-        <>
-          <Background onClick={handleCloseDropdownMenu} />
-          {menuList.map((menu, index) => (
-            <Menu key={menu + index.toString()} onClick={handleClickMenu}>
-              {menu}
-            </Menu>
-          ))}
-        </>
-      )}
-    </DropdownMenuWrapper>
+      {isDropdown2 && <Background onClick={handleCloseDropdownMenu2} />}
+      <DropdownMenuWrapper>
+        <MenuBase onClick={handleClickBase2} ref={menuBaseRef}>
+          {menuState}
+        </MenuBase>
+        {isDropdown2 && (
+          <>
+            {menuList.map((menu, index) => (
+              <Menu2
+                key={menu + index.toString()}
+                index={index}
+                onClick={handleClickMenu2}
+              >
+                {menu}
+              </Menu2>
+            ))}
+          </>
+        )}
+      </DropdownMenuWrapper>
+    </Row>
   );
 }
 
