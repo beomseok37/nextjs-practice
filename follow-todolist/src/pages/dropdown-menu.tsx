@@ -1,4 +1,5 @@
 import { NextPage } from 'next';
+import Link from 'next/link';
 import { useState } from 'react';
 
 import Page from 'src/components/Page';
@@ -16,7 +17,7 @@ const DropdownMenuPage: NextPage = () => {
   return (
     <Page
       header="dropdown menu"
-      pageContentList={[{ content: DROPDOWN_MENU_PAGE_CONTENT, done: false }]}
+      pageContentList={[{ content: DROPDOWN_MENU_PAGE_CONTENT, done: true }]}
     >
       <Row width="600px" justifyContent="space-around">
         <Column>
@@ -30,6 +31,12 @@ const DropdownMenuPage: NextPage = () => {
           <p>선택한 물품은 {bind2[0]}</p>
         </Column>
       </Row>
+      <p style={{ marginTop: '20px' }}>
+        reference by{' '}
+        <Link href="https://codinhood.com/micro/10-dropdown-menu-animations-css-transform">
+          <a>CODINHOOD</a>
+        </Link>
+      </p>
     </Page>
   );
 };
