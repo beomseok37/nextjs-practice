@@ -7,8 +7,6 @@ import {
   useState,
 } from 'react';
 
-import Row from 'src/components/Grid/Row';
-
 import {
   Background,
   DropdownMenuWrapper,
@@ -21,77 +19,63 @@ import {
 interface props {
   bind: [string, Dispatch<SetStateAction<string>>];
   menuList: string[];
+  version: number;
 }
 
-function DropdownMenu({ bind, menuList }: props): ReactElement {
+function DropdownMenu({ bind, menuList, version }: props): ReactElement {
   const [menuState, setMenuState] = bind;
-  const [isDropdown1, setIsDropdown1] = useState(false);
-  const [isDropdown2, setIsDropdown2] = useState(false);
+  const [isDropdown, setIsDropdown] = useState(false);
   const menuBaseRef = useRef<HTMLDivElement>(null);
-  const handleClickBase1 = () => {
-    setIsDropdown1(!isDropdown1);
-    if (isDropdown2) {
-      setIsDropdown2(false);
-    }
+  const handleClickBase = () => {
+    setIsDropdown(!isDropdown);
   };
-  const handleCloseDropdownMenu1 = () => {
-    setIsDropdown1(false);
+  const handleCloseDropdownMenu = () => {
+    setIsDropdown(false);
   };
-  const handleClickMenu1 = (e: MouseEvent<HTMLParagraphElement>) => {
+  const handleClickMenu = (e: MouseEvent<HTMLParagraphElement>) => {
     setMenuState(e.currentTarget.innerText);
-    setIsDropdown1(false);
-  };
-  const handleClickBase2 = () => {
-    setIsDropdown2(!isDropdown2);
-    if (isDropdown1) {
-      setIsDropdown1(false);
-    }
-  };
-  const handleCloseDropdownMenu2 = () => {
-    setIsDropdown2(false);
-  };
-  const handleClickMenu2 = (e: MouseEvent<HTMLParagraphElement>) => {
-    setMenuState(e.currentTarget.innerText);
-    setIsDropdown2(false);
+    setIsDropdown(false);
   };
 
   return (
-    <Row width="600px" justifyContent="space-around">
-      {isDropdown1 && <Background onClick={handleCloseDropdownMenu1} />}
-      <DropdownMenuWrapper>
-        <MenuBase onClick={handleClickBase1} ref={menuBaseRef}>
-          {menuState}
-        </MenuBase>
-        {isDropdown1 && (
-          <MenuList>
-            {menuList.map((menu, index) => (
-              <Menu1 key={menu + index.toString()} onClick={handleClickMenu1}>
-                {menu}
-              </Menu1>
-            ))}
-          </MenuList>
-        )}
-      </DropdownMenuWrapper>
-      {isDropdown2 && <Background onClick={handleCloseDropdownMenu2} />}
-      <DropdownMenuWrapper>
-        <MenuBase onClick={handleClickBase2} ref={menuBaseRef}>
-          {menuState}
-        </MenuBase>
-        {isDropdown2 && (
-          <>
-            {menuList.map((menu, index) => (
-              <Menu2
-                key={menu + index.toString()}
-                index={index}
-                onClick={handleClickMenu2}
-              >
-                {menu}
-              </Menu2>
-            ))}
-          </>
-        )}
-      </DropdownMenuWrapper>
-    </Row>
+    <>
+      {isDropdown && <Background onClick={handleCloseDropdownMenu} />}
+      {version === 1 ? (
+        <DropdownMenuWrapper isDropdown={isDropdown}>
+          <MenuBase onClick={handleClickBase} ref={menuBaseRef}>
+            {menuState}
+          </MenuBase>
+          {isDropdown && (
+            <MenuList>
+              {menuList.map((menu, index) => (
+                <Menu1 key={menu + index.toString()} onClick={handleClickMenu}>
+                  {menu}
+                </Menu1>
+              ))}
+            </MenuList>
+          )}
+        </DropdownMenuWrapper>
+      ) : (
+        <DropdownMenuWrapper isDropdown={isDropdown}>
+          <MenuBase onClick={handleClickBase} ref={menuBaseRef}>
+            {menuState}
+          </MenuBase>
+          {isDropdown && (
+            <>
+              {menuList.map((menu, index) => (
+                <Menu2
+                  key={menu + index.toString()}
+                  index={index}
+                  onClick={handleClickMenu}
+                >
+                  {menu}
+                </Menu2>
+              ))}
+            </>
+          )}
+        </DropdownMenuWrapper>
+      )}
+    </>
   );
 }
 

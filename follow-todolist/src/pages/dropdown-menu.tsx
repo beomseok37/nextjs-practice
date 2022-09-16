@@ -3,11 +3,14 @@ import { useState } from 'react';
 
 import Page from 'src/components/Page';
 import DropdownMenu from 'src/components/DropdownMenu';
+import Row from 'src/components/Grid/Row';
+import Column from 'src/components/Grid/Column';
 
 import { DROPDOWN_MENU_PAGE_CONTENT } from 'src/constant/page';
 
 const DropdownMenuPage: NextPage = () => {
-  const bind = useState('');
+  const bind1 = useState('');
+  const bind2 = useState('');
   const menuList = ['사과', '배', '오렌지', '수박'];
 
   return (
@@ -15,7 +18,18 @@ const DropdownMenuPage: NextPage = () => {
       header="dropdown menu"
       pageContentList={[{ content: DROPDOWN_MENU_PAGE_CONTENT, done: false }]}
     >
-      <DropdownMenu bind={bind} menuList={menuList} />
+      <Row width="600px" justifyContent="space-around">
+        <Column>
+          <p>선택 1</p>
+          <DropdownMenu bind={bind1} menuList={menuList} version={1} />
+          <p>선택한 물품은 {bind1[0]}</p>
+        </Column>
+        <Column>
+          <p>선택 2</p>
+          <DropdownMenu bind={bind2} menuList={menuList} version={2} />
+          <p>선택한 물품은 {bind2[0]}</p>
+        </Column>
+      </Row>
     </Page>
   );
 };

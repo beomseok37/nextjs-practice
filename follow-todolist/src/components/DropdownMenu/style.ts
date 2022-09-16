@@ -1,6 +1,10 @@
 import styled from '@emotion/styled';
 import { css } from '@emotion/react';
 
+interface DropdownMenuWrapperProps {
+  isDropdown: boolean;
+}
+
 interface MenuProps {
   index: number;
 }
@@ -55,9 +59,10 @@ const Background = styled.div`
   inset: 0px;
 `;
 
-const DropdownMenuWrapper = styled.div`
-  z-index: 1;
+const DropdownMenuWrapper = styled.div<DropdownMenuWrapperProps>`
+  z-index: ${({ isDropdown }) => (isDropdown ? '1' : 'unset')};
   width: fit-content;
+  height: 250px;
 `;
 
 const MenuBase = styled.p`
