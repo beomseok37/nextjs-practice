@@ -8,23 +8,50 @@ const MenuDefault = css`
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 2;
+
+  &:hover {
+    cursor: pointer;
+  }
+`;
+
+const growDown = css`
+  @keyframes growDown {
+    0% {
+      transform: scaleY(0);
+    }
+    80% {
+      transform: scaleY(1.1);
+    }
+    100% {
+      transform: scaleY(1);
+    }
+  }
 `;
 
 const Background = styled.div`
   position: fixed;
-  background: #888;
   inset: 0px;
-  z-index: 1;
 `;
 
 const DropdownMenuWrapper = styled.div`
-  animation: growDown 0.25s ease-in-out forwards;
+  z-index: 1;
+  width: fit-content;
 `;
 
 const MenuBase = styled.p`
   ${MenuDefault}
-  background: #ccc;
+  border: 1px solid #ccc;
+`;
+
+const MenuList = styled.div`
+  ${growDown}
+  animation: growDown 0.25s ease-in-out forwards;
+  transform-origin: top center;
+`;
+
+const Menu1 = styled.p`
+  ${MenuDefault}
+  background: #eee;
 `;
 
 const Menu = styled.p`
@@ -32,4 +59,4 @@ const Menu = styled.p`
   background: #eee;
 `;
 
-export { Background, DropdownMenuWrapper, MenuBase, Menu };
+export { Background, DropdownMenuWrapper, MenuBase, MenuList, Menu1, Menu2 };
