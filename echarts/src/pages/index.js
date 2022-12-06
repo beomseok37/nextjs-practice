@@ -6,18 +6,49 @@ import ReactECharts from 'echarts-for-react';
 import { mockData } from '../mockData';
 
 export default function Home() {
-  const getOption = (option) => {
+  const getOption1 = ({ text, xAxis, yAxis }) => {
+    return {
+      title: { text },
+      xAxis: {
+        type: 'category',
+        data: xAxis,
+      },
+      yAxis: { type: 'value' },
+      legend: {},
+      series: [
+        {
+          type: 'line',
+          symbol: 'none',
+          data: yAxis,
+        },
+      ],
+      tooltip: {
+        trigger: 'axis',
+      },
+      toolbox: {
+        feature: {
+          dataZoom: {
+            show: true,
+          },
+        },
+      },
+      dataZoom: [
+        {
+          type: 'inside',
+        },
+        {
+          type: 'slider',
+        },
+      ],
+    };
+  };
+
+  const getOption2 = (option) => {
     const { data, epoch } = option;
     return {
       title: { text: 'epoch' + epoch },
       xAxis: {
         type: 'category',
-        // axisLine: {
-        //   show: false,
-        // },
-        // axisTick: {
-        //   show: false,
-        // },
       },
       yAxis: { type: 'value' },
       dataset: {
@@ -66,27 +97,79 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <div
-          style={{
-            display: 'flex',
-            flexDirection: 'column',
-            justifyContent: 'center',
-            alignItems: 'center',
-            width: '100%',
-            height: '100%',
-            // padding: '40px',
-          }}
-        >
-          {mockData.map((data) => (
-            <ReactECharts
-              key={data.epoch}
-              option={getOption(data)}
-              style={{
-                width: '800px',
-                height: '260px',
-              }}
-            />
-          ))}
+        <div style={{ display: 'flex' }}>
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              alignItems: 'center',
+              width: '100%',
+              height: '100%',
+              // padding: '40px',
+            }}
+          >
+            <h1>version1</h1>
+            {mockData.reduce((prev, curr) => {
+              const { epoch, data: dataObject } = curr;
+              const newChart = [
+                <span key={epoch} style={{ background: '#dddddd' }}>
+                  epoch{epoch}
+                </span>,
+              ];
+              const keyList = Object.keys(dataObject);
+              return prev.concat(
+                newChart.concat(
+                  keyList
+                    .filter((key) => key !== 'step')
+                    .map((key) => {
+                      const xAxis = dataObject.step;
+                      const yAxis = dataObject[key];
+                      return (
+                        <ReactECharts
+                          key={JSON.stringify(dataObject[key])}
+                          option={getOption1({ text: key, xAxis, yAxis })}
+                          style={{
+                            width: '800px',
+                            height: '260px',
+                          }}
+                        />
+                      );
+                    })
+                )
+              );
+            }, [])}
+          </div>
+          <hr
+            style={{
+              height: '100%',
+              border: '0px',
+              padding: '0 40px',
+            }}
+          />
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              justifyContent: 'center',
+              alignItems: 'center',
+              width: '100%',
+              height: '100%',
+              // padding: '40px',
+            }}
+          >
+            <h1>version2</h1>
+            {mockData.map((data) => (
+              <ReactECharts
+                key={data.epoch}
+                option={getOption2(data)}
+                style={{
+                  width: '800px',
+                  height: '260px',
+                }}
+              />
+            ))}
+          </div>
         </div>
       </main>
 
